@@ -2,6 +2,7 @@
 <html lang="ko">
     <head>
         <title>Happy Birthday Jihong!</title>
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         
@@ -17,10 +18,10 @@
         <a target="_blank" class="twitter-share-button"
           href="https://twitter.com/share"
           data-size="large"
-          data-text="custom share text"
+          data-text="Happy Birthday Jihong!"
           data-url="https://hbd-jihere.github.io/"
-          data-hashtags="example,demo"
-          data-via="twitterdev"
+          data-hashtags="ABF,fuze"
+          data-via="ABF"
           data-related="twitterapi,twitter">
         Tweet
         </a>
@@ -32,6 +33,23 @@
         
         <div id="fb-root"></div>
         <script>
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+        
+          return t;
+        }(document, "script", "twitter-wjs"));
+        
         /* global Kakao */
         // 페이스북 공유
         (function(d, s, id) {
@@ -52,6 +70,19 @@
           requestUrl: 'https://hbd-jihere.github.io/'
         });
       //]]>
+        
+        //트위터 공유
+        twttr.widgets.createShareButton(
+          "https:\/\/dev.twitter.com\/web\/tweet-button",
+          document.getElementById("tweet-container"),
+          {
+            size: "large",
+            text: "custom share text",
+            hashtags: "example,demo",
+            via: "twitterdev",
+            related: "twitterapi,twitter"
+          }
+        );
         
         </script>
     </body>
